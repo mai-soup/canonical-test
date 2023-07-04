@@ -9,7 +9,6 @@ function App() {
     const fetchData = async () => {
       const result = await axios.get("https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json");
       setData(result.data);
-      console.log(result.data)
     };
 
     fetchData();
@@ -19,7 +18,7 @@ function App() {
     <div className="row" style={{ marginTop: "2rem" }}>
       {data.slice(0, 3).map((item: any) => {
         let topicName = "";
-        console.log(item)
+
         if (item._embedded && item._embedded['wp:term']) {
           const topicTerm = item._embedded['wp:term'].find((term: any) => term[0] && term[0].taxonomy === 'topic');
 
