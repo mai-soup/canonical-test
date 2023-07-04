@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({ topic, imageUrl, title, authorName = "Autho
     createdOn = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
     return (
-        <div className="p-card--highlighted" style={{ boxShadow: "inset 0 3px 0 0 orchid, 0 0 6px rgba(0,0,0,0.2)" }}>
+        <div className="p-card--highlighted" style={{ boxShadow: "inset 0 3px 0 0 rgba(119,33,111,0.7), 0 0 6px rgba(0,0,0,0.2)" }}>
             <p className="p-text--small-caps">{topic}</p>
             <hr className="is-muted" />
             <div className="p-card__content">
