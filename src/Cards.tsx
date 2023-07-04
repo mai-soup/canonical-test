@@ -7,9 +7,10 @@ interface CardProps {
     createdOn: string,
     entryType: string,
     imageAlt: string,
+    postUrl: string
 }
 
-const Card: React.FC<CardProps> = ({ topic, imageUrl, title, authorName = "Author", authorUrl, createdOn, entryType = "Entry Type", imageAlt }) => {
+const Card: React.FC<CardProps> = ({ topic, imageUrl, title, authorName = "Author", authorUrl, createdOn, entryType = "Entry Type", imageAlt, postUrl }) => {
     const date = new Date(createdOn);
     createdOn = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -23,7 +24,7 @@ const Card: React.FC<CardProps> = ({ topic, imageUrl, title, authorName = "Autho
             <div className="p-card__content">
                 <img className="p-card__image" height="185" width="330" src={imageUrl} alt={imageAlt} />
                 <h4>
-                    <a href="#">{title}</a>
+                    <a href={postUrl}>{title}</a>
                 </h4>
                 <em><p className="u-left">By <a href={authorUrl}>{authorName}</a> on {createdOn}</p></em>
             </div>
